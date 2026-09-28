@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>bug2_navigation</name>
+  <version>0.0.1</version>
+
+  <description>
+    ROS-based autonomous mobile robot navigation using the Bug2 algorithm.
+  </description>
+
+  <maintainer email="user@example.com">anirudh</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+  <depend>visualization_msgs</depend>
+
+</package>

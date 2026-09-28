@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- ======================================== -->
+  <!-- GAZEBO                                  -->
+  <!-- ======================================== -->
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+    <arg
+      name="world_name"
+      value="$(find bug2_navigation)/worlds/bug2_world.world"
+    />
+
+    <arg name="paused" value="false"/>
+
+    <arg name="use_sim_time" value="true"/>
+
+    <arg name="gui" value="true"/>
+
+  </include>
+
+
+  <!-- ======================================== -->
+  <!-- ROBOT DESCRIPTION                       -->
+  <!-- ======================================== -->
+
+  <param
+    name="robot_description"
+    command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro"
+  />
+
+
+  <!-- ======================================== -->
+  <!-- SPAWN TURTLEBOT                         -->
+  <!-- ======================================== -->
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_turtlebot3"
+    output="screen"
+
+    args="-urdf
+          -param robot_description
+          -model turtlebot3_burger
+          -x -4
+          -y -4
+          -z 0.05"
+  />
+
+</launch>
